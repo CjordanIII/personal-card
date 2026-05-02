@@ -1,21 +1,39 @@
-# cob1c42bdbdf7c75702d60b77
+# GreenPal Customer Exporter (Chrome Extension)
 
-Quick start:
+This extension adds a popup button to export customer data from:
 
-```
-$ npm install
-$ npm start
-````
+- `https://www.yourgreenpal.com/vendor/my_customers`
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+It collects for each customer row:
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+- Export date (today)
+- Customer name
+- Customer address
+- Next mow date (if available)
+- Full schedule text
+- Base charge
+- Tax rate
+- Tax amount
+- Total charge including tax
+- Any extra custom columns you define
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+## Install locally
 
-Happy Coding!
+1. Open Chrome and go to `chrome://extensions`.
+2. Enable **Developer mode**.
+3. Click **Load unpacked**.
+4. Select this project folder.
+
+## Use
+
+1. Open the GreenPal customers page.
+2. Click the extension icon.
+3. Enter tax rate (example: `8.25`).
+4. (Optional) Enter extra column titles separated by commas (example: `Route,Notes,Paid`).
+5. Click **Start Export**.
+6. A CSV file downloads automatically and can be opened in Google Sheets.
+
+## Notes
+
+- If a customer says `None Scheduled`, next mow date is left blank.
+- The extension uses your current page DOM structure (`.customer-row`, `.name`, `.address`, `.type-schedule`, `.price-box .green-box`).

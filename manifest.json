@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "GreenPal Customer Exporter",
+  "version": "1.0.0",
+  "description": "Collect customer rows from GreenPal and export CSV for Google Sheets.",
+  "permissions": ["activeTab", "scripting", "downloads", "storage"],
+  "host_permissions": ["https://www.yourgreenpal.com/*"],
+  "action": {
+    "default_title": "GreenPal Exporter",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.yourgreenpal.com/vendor/my_customers*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

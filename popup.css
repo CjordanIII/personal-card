@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; margin: 0; }
+main { width: 320px; padding: 12px; }
+h1 { margin: 0 0 8px; font-size: 18px; }
+.hint { font-size: 12px; color: #333; }
+label { display: block; font-weight: 600; margin-top: 10px; font-size: 12px; }
+input { width: 100%; box-sizing: border-box; padding: 8px; margin-top: 4px; }
+button { width: 100%; margin-top: 12px; padding: 10px; border: 0; background: #1f7a3f; color: #fff; border-radius: 6px; font-weight: 700; cursor: pointer; }
+#status { margin-top: 8px; font-size: 12px; color: #0f5132; min-height: 16px; }
